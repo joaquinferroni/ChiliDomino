@@ -17,7 +17,7 @@ namespace Domino
 
         public static Domino Create(string chain)
         {
-            bool isValid = Regex.IsMatch(chain, @"^[\[\]\s0-9|]+$");
+            bool isValid = Regex.IsMatch(chain, @"^[\[\]\s0-9|]+$") && !Regex.IsMatch(chain, @"\d{2,}");
             if (!isValid || string.IsNullOrWhiteSpace(chain))
             {
                 throw new ArgumentException("Input has not valid characters", nameof(chain));

@@ -12,6 +12,7 @@ namespace Domino.Tests
         [InlineData("[1|1],[1|2]")]
         [InlineData("[a|b]")]
         [InlineData("")]
+        [InlineData("[10|10]")]
         [Theory]
         public void Should_ThrowsException_BecauseOfInvalidCharacters(string chain)
         {
